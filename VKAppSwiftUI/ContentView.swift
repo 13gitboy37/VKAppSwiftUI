@@ -39,7 +39,7 @@ struct ContentView: View {
                     .padding([.bottom, .top], 20)
             }
             
-            VStack {
+            VStack(alignment: .leading) {
                 Text("Телефон или e-mail")
 //                    .fontWeight(.semibold)
                     .frame(width: 300, height: 20, alignment: .leading)
@@ -49,7 +49,7 @@ struct ContentView: View {
                 .frame(maxWidth: 300)
             }
             
-            VStack {
+            VStack(alignment: .leading) {
                 Text("Пароль:")
                     .frame(width: 300, height: 20, alignment: .leading)
                 Spacer()
