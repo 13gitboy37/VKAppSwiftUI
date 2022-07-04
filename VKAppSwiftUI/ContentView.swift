@@ -41,8 +41,7 @@ struct ContentView: View {
             
             VStack(alignment: .leading) {
                 Text("Телефон или e-mail")
-//                    .fontWeight(.semibold)
-                    .frame(width: 300, height: 20, alignment: .leading)
+                    .frame(width: 300, alignment: .leading)
                     .padding(.top, 20)
                 Spacer()
                 TextField("", text: $login)
@@ -51,7 +50,7 @@ struct ContentView: View {
             
             VStack(alignment: .leading) {
                 Text("Пароль:")
-                    .frame(width: 300, height: 20, alignment: .leading)
+                    .frame(maxWidth: 300, alignment: .leading)
                 Spacer()
                 SecureField("", text: $password)
                     .frame(maxWidth: 300)
@@ -64,13 +63,11 @@ struct ContentView: View {
                 Text("Войти")
                     .bold()
                     .foregroundColor(.white)
+                    .frame(maxWidth: 60)
             }
             .buttonStyle(.bordered)
             .background(.blue)
-            .frame( minWidth: 90,
-                    minHeight: 40,
-                    alignment: .center)
-                .disabled(self.login.isEmpty || self.password.isEmpty)
+            .disabled(self.login.isEmpty || self.password.isEmpty)
                 
                 Button {
                     print("Log In pressed")
@@ -79,11 +76,9 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                     }
             }
-            .padding(.leading, -8)
             .frame(maxWidth: 300,
                    maxHeight: 50,
                    alignment: .leading)
-            
             
             
             Text("Ещё не зарегестрированы?")
@@ -95,9 +90,9 @@ struct ContentView: View {
                 print("Tap regestration button")
             } label: {
                 Text("Зарегистрироваться")
+                    .frame( maxWidth: 300)
             }
             .buttonStyle(.bordered)
-            .frame(width: 300, height: 40, alignment: .top)
             .padding(.top, 5)
             Spacer()
             
