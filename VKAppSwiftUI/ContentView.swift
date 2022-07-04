@@ -81,7 +81,6 @@ struct ContentView: View {
                    alignment: .leading)
             
             
-            
             Text("Ещё не зарегестрированы?")
                 .font(.headline)
                 .frame(maxWidth: 300, maxHeight: 30, alignment: .leading)

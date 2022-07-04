@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF425AB22872FA2200AB0168 /* FriendsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF425AB12872FA2200AB0168 /* FriendsCellView.swift */; };
+		AF425AB42873237500AB0168 /* GroupsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF425AB32873237500AB0168 /* GroupsCellView.swift */; };
 		AFA82C52285F1E0D00F27DA9 /* VKAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA82C51285F1E0D00F27DA9 /* VKAppSwiftUIApp.swift */; };
 		AFA82C54285F1E0D00F27DA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA82C53285F1E0D00F27DA9 /* ContentView.swift */; };
 		AFA82C56285F1E0F00F27DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA82C55285F1E0F00F27DA9 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF425AB12872FA2200AB0168 /* FriendsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCellView.swift; sourceTree = "<group>"; };
+		AF425AB32873237500AB0168 /* GroupsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCellView.swift; sourceTree = "<group>"; };
 		AFA82C4E285F1E0D00F27DA9 /* VKAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA82C51285F1E0D00F27DA9 /* VKAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		AFA82C53285F1E0D00F27DA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				AFA82C51285F1E0D00F27DA9 /* VKAppSwiftUIApp.swift */,
 				AFA82C53285F1E0D00F27DA9 /* ContentView.swift */,
+				AF425AB12872FA2200AB0168 /* FriendsCellView.swift */,
+				AF425AB32873237500AB0168 /* GroupsCellView.swift */,
 				AFA82C55285F1E0F00F27DA9 /* Assets.xcassets */,
 				AFA82C57285F1E0F00F27DA9 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFA82C54285F1E0D00F27DA9 /* ContentView.swift in Sources */,
+				AF425AB22872FA2200AB0168 /* FriendsCellView.swift in Sources */,
+				AF425AB42873237500AB0168 /* GroupsCellView.swift in Sources */,
 				AFA82C52285F1E0D00F27DA9 /* VKAppSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
