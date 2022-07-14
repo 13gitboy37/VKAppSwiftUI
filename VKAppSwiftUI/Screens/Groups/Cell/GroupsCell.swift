@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct GroupCell: View {
     
-    let group: Group
+    let group: GroupsItems
     
     var body: some View {
         
         HStack {
-            Image("\(group.imageName)")
+            KFImage(URL(string: group.groupsPhoto))
                 .resizable()
                 .frame(width: 50, height: 50)
                 .circleShadow(color: .purple, radius: 15)

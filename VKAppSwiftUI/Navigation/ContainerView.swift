@@ -10,22 +10,11 @@ import SwiftUI
 struct ContainerView: View {
     @State private var showFriendsScreen = false
     
-
-    
     var body: some View {
         NavigationView {
             HStack {
-                LoginView(isUserLoggedIn: $showFriendsScreen)
-                NavigationLink(destination: MainView(), isActive: $showFriendsScreen) {
-                    EmptyView()
-                }
+                MainView()
             }
         }
-    }
-}
-
-struct ContainerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContainerView()
     }
 }
