@@ -6,19 +6,20 @@
 //
 
 import SwiftUI
+import Kingfisher
+import CoreData
 
 struct FriendCell: View {
     
-    let friend: Friend
+    let friend: UserItems
     
     var body: some View {
-        
         HStack {
-        Image(friend.imageName)
+            KFImage(URL(string: friend.userPhoto))
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 50, height: 50, alignment: .leading)
-        Text("\(friend.name)")
+            Text("\(friend.fullName)")
     }
     }
 }

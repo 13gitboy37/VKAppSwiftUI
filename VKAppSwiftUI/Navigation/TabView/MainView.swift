@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     let tabs = ["Friends", "Groups"]
     
+    let networkService = NetworkService()
+    
     @State private var selection: String
     
     init() {
@@ -18,11 +20,13 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $selection, content: {
-            FriendsView()
+            let friendViewModel = FriendViewModel(networkService: networkService)
+            let groupsViewModel = GroupsViewModel(networkService: networkService)
+            FriendsView(viewModel: friendViewModel)
                 .tabItem {
                     Label("Friend", systemImage: "person")
                 }.tag(tabs[0])
-            GroupsView()
+            GroupsView(viewModel: groupsViewModel)
                 .tabItem {
                     Label("Group", systemImage: "person.3")
                 }
