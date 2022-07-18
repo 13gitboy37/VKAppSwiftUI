@@ -10,6 +10,8 @@ import Kingfisher
 import CoreData
 
 struct FriendCell: View {
+    @State private var animationOn: Bool = false
+//    @State private var angle: Double = 0
     
     let friend: UserItems
     
@@ -19,6 +21,11 @@ struct FriendCell: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 50, height: 50, alignment: .leading)
+            .scaleEffect(animationOn ? 1.1 : 1)
+            .animation(.interpolatingSpring(stiffness: 350, damping: 5),value: animationOn)
+            .onTapGesture {
+                self.animationOn.toggle()
+            }
             Text("\(friend.fullName)")
     }
     }

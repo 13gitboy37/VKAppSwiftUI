@@ -10,6 +10,8 @@ import Kingfisher
 
 struct GroupCell: View {
     
+    @State private var animationOn: Bool = false
+    
     let group: GroupsItems
     
     var body: some View {
@@ -19,6 +21,11 @@ struct GroupCell: View {
                 .resizable()
                 .frame(width: 50, height: 50)
                 .circleShadow(color: .purple, radius: 15)
+                .scaleEffect(animationOn ? 1.1 : 1)
+                .animation(.interpolatingSpring(stiffness: 350, damping: 5),value: animationOn)
+                .onTapGesture {
+                    self.animationOn.toggle()
+                }
             
             Text("\(group.name)")
                 .lineLimit(1)
