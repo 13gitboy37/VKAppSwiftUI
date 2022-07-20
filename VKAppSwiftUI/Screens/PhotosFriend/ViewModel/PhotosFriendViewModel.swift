@@ -20,12 +20,14 @@ class PhotosFriendViewModel: ObservableObject {
     }
     
     public func fetchPhoto(id: Int) {
+        var photoSizesArray = [String]()
         networkService.getPhotos(ownerID: id) { [weak self] result in
             switch result {
             case .success(let photosJSON):
                 photosJSON.forEach { photo in
                     DispatchQueue.main.async {
-                        self?.photos.append(photo.sizes.first?.urlPhoto ?? "")
+                        photoSizesArray.append(photo.sizes.first?.urlPhoto ?? "")
+                        self?.photos = photoSizesArray
                     }
                 }
             case .failure(let error):

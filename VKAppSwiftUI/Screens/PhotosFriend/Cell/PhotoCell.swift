@@ -13,29 +13,25 @@ struct PhotoCellView: View {
     @State private var likeTapped: Bool = false
     @State private var image: String = ""
     
-    
     let photo: String
     
     var body: some View {
-        
-        VStack {
+        ZStack {
             KFImage(URL(string: photo))
-                .resizable()
-            .frame(width: 100, height: 100, alignment: .leading)
-        Button {
-            self.likeTapped.toggle()
-        } label: {
-            HStack {
+            .resizable()
+            ZStack {
             Image(systemName: "heart.fill")
-                    .foregroundColor(likeTapped ? .red : .gray)
-            Text(likeTapped ? "1" : "0")
-            }
-            .animation(.interpolatingSpring(stiffness: 350, damping: 5), value: likeTapped)
-            .frame(idealWidth: 40, maxWidth: 40, idealHeight: 10, maxHeight: 10, alignment: .trailing)
+                .opacity(likeTapped ? 1 : 0)
+                .scaleEffect(likeTapped ? 1.0 : 0.1)
+                .animation(.linear, value: likeTapped)
+            Image(systemName: "heart")
+        }.font(.system(size: 40))
+            .onTapGesture {
+                self.likeTapped.toggle()
         }
-        .buttonStyle(.borderless)
-        .padding(.top, -4)
-        }
+        .foregroundColor(likeTapped ? .red : .white)
+    }
+        .frame(width: 100, height: 100, alignment: .center)
     }
 }
 
