@@ -17,15 +17,19 @@ struct PhotosFriendView: View {
     
     var body: some View {
         
-        ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 200))]) {
+        GeometryReader { geometry in
+        ScrollView(.vertical) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 200))],alignment: .center) {
                 ForEach(0..<viewModel.photos.count, id: \.self) { index in
                     PhotoCellView(photo: viewModel.photos[index])
+                        .frame(height: geometry.size.width / 3)
                 }
-            }.onAppear {
+            }
+        }
+        }
+        .onAppear {
                 viewModel.fetchPhoto(id: viewModel.friend.id)
-        }
-        }
+            }
         Spacer()
             .navigationBarTitle("Photos \(viewModel.friend.fullName)`s", displayMode: .inline)
     }

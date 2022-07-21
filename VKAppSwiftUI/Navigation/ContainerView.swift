@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContainerView: View {
-    @State private var showFriendsScreen = false
     
     var body: some View {
         NavigationView {
@@ -18,3 +17,4 @@ struct ContainerView: View {
         }
     }
 }
+

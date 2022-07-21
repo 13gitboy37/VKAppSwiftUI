@@ -23,7 +23,7 @@ struct FriendsView: View {
         })) { friend in
             let photosViewModel = PhotosFriendViewModel(friend: friend)
             NavigationLink(destination: PhotosFriendView(viewModel: photosViewModel)) {
-                FriendCell(friend: friend)
+            FriendCell(friend: friend)
             }
         }
         }
